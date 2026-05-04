@@ -30,10 +30,25 @@
 
          You can define any number of servlets, including zero.
     -->
-
-    <servlet>
+  
+	<servlet>
       <servlet-name>EmailListServlet</servlet-name>
       <servlet-class>murach.email.EmailListServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+      <servlet-name>SurveyListServlet</servlet-name>
+      <servlet-class>murach.survey.SurveyListServlet</servlet-class>
+    </servlet>
+
+	<servlet>
+      <servlet-name>DownloadServlet</servlet-name>
+      <servlet-class>murach.download.DownloadServlet</servlet-class>
+    </servlet>
+
+	<servlet>
+      <servlet-name>CartServlet</servlet-name>
+      <servlet-class>murach.cart.CartServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -41,13 +56,49 @@
       <url-pattern>/emailList</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+      <servlet-name>EmailListServlet</servlet-name>
+      <url-pattern>/email/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>SurveyListServlet</servlet-name>
+      <url-pattern>/surveyList</url-pattern>
+    </servlet-mapping>
+        
+    <servlet-mapping>
+      <servlet-name>SurveyListServlet</servlet-name>
+      <url-pattern>/survey/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>DownloadServlet</servlet-name>
+      <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+      
+      
+    <servlet-mapping>
+      <servlet-name>CartServlet</servlet-name>
+      <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+      
     <session-config>
       <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+      <tracking-mode>COOKIE</tracking-mode>
     </session-config>
+    
+    <error-page>
+    	<error-code>404</error-code>
+		<location>/WEB-INF/chapter05/error_404.jsp</location>
+    </error-page>
+    
+    <error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/WEB-INF/chapter05/error_java.jsp</location>
+	</error-page>
 
 	<welcome-file-list>
         <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
 </web-app>

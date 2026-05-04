@@ -2,11 +2,13 @@ package murach.email;
 
 import java.io.*;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import murach.business.User;
+import murach.data.UserDB;
+
 
 public class EmailListServlet extends HttpServlet {
 
@@ -16,7 +18,9 @@ public class EmailListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 		
-		String url = "/index.html";
+		String url = "/ch05.jsp";
+		User user;
+		String message;
 		
 		// get current action
 		String action = request.getParameter("action");
@@ -26,7 +30,11 @@ public class EmailListServlet extends HttpServlet {
 		
 		// perform action and set URL to appropriate page
 		if (action.equals("join")) {
-			url = "/index.html";
+			user = new User();
+			message = "";
+			url = "/ch05.jsp";
+			request.setAttribute("user", user);
+			request.setAttribute("message", message);
 		}
 		else if (action.equals("add")) {
 			// get parameters from request
@@ -35,12 +43,22 @@ public class EmailListServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			
 			// store data in User Object and save User object to database
-			User user = new User(firstName, lastName, email);
-			// UserDB.insert(user);
+			user = new User(firstName, lastName, email);
+			
+			// validate the parameters
+			if (firstName == null || lastName == null || email == null ||
+					firstName.isEmpty() || lastName.isEmpty() || email.isEmpty()) {
+				message = "Please fill all three text boxes.";
+				url = "/ch05.jsp";
+			} else {
+				message = "";
+				url = "/WEB-INF/chapter05/thanks.jsp";
+				UserDB.insert(user);
+			}
 			
 			// set User object in request object and set url
 			request.setAttribute("user", user);
-			url = "/WEB-INF/chapter02/thanks.jsp";
+			request.setAttribute("message", message);
 		}
 		
 		// forward request and response object to specific URL
