@@ -30,6 +30,5 @@
 	<span><a href="ch20.jsp">Download Application</a></span><br>
 	<a href="ch21.xhtml">Chapter 21 - How to Work with JavaServer Faces</a><br>
 	<a href="musicstore.jsp">Chapter 22 - An Introduction	to the Music Store Website</a><br>
-	<a href="">Chapter 23 - The Applications on the Website</a><br>
 </body>
 </html>
