@@ -49,7 +49,7 @@ public class EmailListDBServlet extends HttpServlet {
 			user = new User(firstName, lastName, email);
 			
 			// validate the parameters
-			if (UserDB.EmailExists(user.getEmail())) {
+			if (UserDB.emailExists(user.getEmail())) {
 				message = "This email address already exist.<br>" + 
 						"Please enter another email address.";
 				url = "/ch14.jsp";

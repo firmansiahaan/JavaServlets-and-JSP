@@ -1,96 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	
-	<display-name>email</display-name>
-	<servlet>
-		<servlet-name>EmailListServlet</servlet-name>
-		<servlet-class>murach.email.EmailListServlet</servlet-class>
-    </servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Murach's Servlets and JSP: Music Store site and email</display-name>
+  <description>The Music Store web site that's described in
+        Murach's Java Servlets and JSP (3rd Edition)</description>
+        
+  <filter>
+    <filter-name>TestFilter1</filter-name>
+    <filter-class>murach.filters.TestFilter1</filter-class>
+  </filter>
+  <filter>
+    <filter-name>TestFilter2</filter-name>
+    <filter-class>murach.filters.TestFilter2</filter-class>
+  </filter>
+  <filter>
+    <filter-name>TestFilter3</filter-name>
+    <filter-class>murach.filters.TestFilter3</filter-class>
+  </filter>
+  <filter>
+    <filter-name>TestInitParamsFilter</filter-name>
+    <filter-class>murach.filters.TestInitParamsFilter</filter-class>
+    <init-param>
+      <param-name>logFilename</param-name>
+      <param-value>test_init_params.log</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>LogRequestFilter</filter-name>
+    <filter-class>murach.filters.LogRequestFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>LogResponseFilter</filter-name>
+    <filter-class>murach.filters.LogResponseFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>LogResponseCookiesFilter</filter-name>
+    <filter-class>murach.filters.LogResponseCookiesFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TestFilter1</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>TestFilter2</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>TestFilter3</filter-name>
+    <servlet-name>DownloadServlet</servlet-name>
+  </filter-mapping>
   
-	<servlet>
-		<servlet-name>EmailListDBServlet</servlet-name>
-		<servlet-class>murach.email.EmailListDBServlet</servlet-class>
-    </servlet>
-
-    <servlet>
-		<servlet-name>SurveyListServlet</servlet-name>
-		<servlet-class>murach.survey.SurveyListServlet</servlet-class>
-    </servlet>
-
-	<servlet>
-		<servlet-name>DownloadServlet</servlet-name>
-		<servlet-class>murach.download.DownloadServlet</servlet-class>
-    </servlet>
-
-	<servlet>
-		<servlet-name>CartServlet</servlet-name>
-		<servlet-class>murach.cart.CartServlet</servlet-class>
-    </servlet>
-
-	<servlet>
-		<servlet-name>SqlGatewayServlet</servlet-name>
-		<servlet-class>murach.sql.SqlGatewayServlet</servlet-class>
-    </servlet>
+  <servlet>
+  	<servlet-name>AdminController</servlet-name>
+    <servlet-class>musicstore.controllers.AdminController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CatalogController</servlet-name>
+    <servlet-class>musicstore.controllers.CatalogController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderController</servlet-name>
+    <servlet-class>musicstore.controllers.OrderController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>musicstore.controllers.UserController</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>EmailListServlet</servlet-name>
+    <servlet-class>murach.email.EmailListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EmailListDBServlet</servlet-name>
+    <servlet-class>murach.email.EmailListDBServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SurveyListServlet</servlet-name>
+    <servlet-class>murach.survey.SurveyListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>murach.download.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>murach.cart.CartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SqlGatewayServlet</servlet-name>
+    <servlet-class>murach.sql.SqlGatewayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UsersServlet</servlet-name>
+    <servlet-class>murach.admin.UsersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckPasswordServlet</servlet-name>
+    <servlet-class>murach.account.CheckPasswordServlet</servlet-class>
+  </servlet>
+ <!-- 
+  <servlet>
+  	<servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+ -->
+ 
+  <servlet-mapping>
+ 	<servlet-name>AdminController</servlet-name>
+    <url-pattern>/adminController/*</url-pattern>
+  </servlet-mapping>
+ 	<servlet-mapping>
+    <servlet-name>CatalogController</servlet-name>
+    <url-pattern>/catalog/product/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+ 	<servlet-name>OrderController</servlet-name>
+    <url-pattern>/order/*</url-pattern>
+  </servlet-mapping>
+ 	<servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/user/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+ 	<servlet-name>EmailListServlet</servlet-name>
+    <url-pattern>/emailList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmailListDBServlet</servlet-name>
+    <url-pattern>/emailListDB</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SurveyListServlet</servlet-name>
+    <url-pattern>/surveyList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SqlGatewayServlet</servlet-name>
+    <url-pattern>/sqlGateway</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersServlet</servlet-name>
+    <url-pattern>/userAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckPasswordServlet</servlet-name>
+    <url-pattern>/check</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+<!--   <session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config> -->
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/chapter05/error_404.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/WEB-INF/chapter05/error_java.jsp</location>
+  </error-page>
+  
+  <listener>
+    <listener-class>murach.util.CartContextListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>murach.util.CartSessionListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>musicstore.util.MusicStoreContextListener</listener-class>
+  </listener>
+  
+  <context-param>
+    <param-name>custServEmail</param-name>
+    <param-value>custserv@murach.com</param-value>
+  </context-param>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>AdminArea</web-resource-name>
+      <url-pattern>/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>programmer</role-name>
+      <role-name>service</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <security-role>
+    <description>programmer</description>
+    <role-name>programmer</role-name>
+  </security-role>
+  <security-role>
+    <description>customer service employee</description>
+    <role-name>service</role-name>
+  </security-role>
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Admin Login</realm-name>
+  </login-config>
     
-    <servlet>
-		<servlet-name>UsersServlet</servlet-name>
-		<servlet-class>murach.admin.UsersServlet</servlet-class>
-	</servlet>
-	
-    <servlet-mapping>
-    	<servlet-name>EmailListServlet</servlet-name>
-    	<url-pattern>/emailList</url-pattern>
-    </servlet-mapping>
-      
-    <servlet-mapping>
-    	<servlet-name>EmailListDBServlet</servlet-name>
-    	<url-pattern>/emailListDB</url-pattern>
-    </servlet-mapping>
-     
-    <servlet-mapping>
-    	<servlet-name>SurveyListServlet</servlet-name>
-    	<url-pattern>/surveyList</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-    	<servlet-name>DownloadServlet</servlet-name>
-    	<url-pattern>/download</url-pattern>
-    </servlet-mapping>
-      
-    <servlet-mapping>
-    	<servlet-name>CartServlet</servlet-name>
-    	<url-pattern>/cart</url-pattern>
-    </servlet-mapping>
-      
-    <servlet-mapping>
-    	<servlet-name>SqlGatewayServlet</servlet-name>
-    	<url-pattern>/sqlGateway</url-pattern>
-    </servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>UsersServlet</servlet-name>
-		<url-pattern>/userAdmin</url-pattern>
-	</servlet-mapping>
-	
-    <session-config>
-    	<session-timeout>30</session-timeout>
-    </session-config>
-
-	<error-page>
-		<error-code>404</error-code>
-		<location>/WEB-INF/chapter05/error_404.jsp</location>
-    </error-page>
-    
-    <error-page>
-    	<exception-type>java.lang.Throwable</exception-type>
-		<location>/WEB-INF/chapter05/error_java.jsp</location>
-	</error-page>
-	
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
 </web-app>

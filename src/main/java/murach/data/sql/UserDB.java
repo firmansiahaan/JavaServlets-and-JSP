@@ -80,7 +80,7 @@ public class UserDB {
         }
 	}
 	
-	public static boolean EmailExists(String email) {
+	public static boolean emailExists(String email) {
 		ConnectionPool pool = ConnectionPool.getInsance();
         Connection connection = pool.getConnection();
         PreparedStatement preparedStatement = null;

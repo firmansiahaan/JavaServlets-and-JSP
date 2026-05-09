@@ -16,10 +16,20 @@
 	<a href="ch07.jsp">Chapter 8 - How to use EL</a><br>
 	<a href="ch09.jsp">Chapter 9 - How to use JSTL</a><br>
 	<a href="ch06.jsp">Chapter 10 - How to use Custom JSP Tags</a><br>
-	<a href="">Chapter 12 - How to use JDBC to Work With Database</a><br>
-	&nbsp;&nbsp;&nbsp;&nbsp;<a href="ch12.jsp">SQL Gateway</a><br>
-	&nbsp;&nbsp;&nbsp;&nbsp;<a href="ch12el.jsp">Email List Application - DB version</a><br>
+	Chapter 12 - How to use JDBC to Work With Database<br>
+	<span><a href="ch12.jsp">SQL Gateway</a></span><br>
+	<span><a href="ch12el.jsp">Email List Application - DB version</a></span><br>
 	<a href="ch13.jsp">Chapter 13 - How to use JPA to Work With Database</a><br>
 	<a href="ch14.jsp">Chapter 14 - How to use JavaMail to Send Email</a><br>
+	<a href="admin/ch16.jsp">Chapter 16 - How to Restrict Access to a Web Resource</a><br>
+	<a href="ch17.jsp">Chapter 17 - More Security Skills</a><br>
+	<a href="ch18.html">Chapter 18 - How to Work with HTTP Requests and Responses</a><br>
+	Chapter 19 - How to Work with Listeners<br>
+	<span><a href="ch19.jsp">Cart Shop Application</a></span><br>
+	Chapter 20 - How to Work with Filters<br>
+	<span><a href="ch20.jsp">Download Application</a></span><br>
+	<a href="ch21.xhtml">Chapter 21 - How to Work with JavaServer Faces</a><br>
+	<a href="musicstore.jsp">Chapter 22 - An Introduction	to the Music Store Website</a><br>
+	<a href="">Chapter 23 - The Applications on the Website</a><br>
 </body>
 </html>

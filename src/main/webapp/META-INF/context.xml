@@ -8,5 +8,28 @@
         maxActive="100" maxIdle="30" maxWait="10000" 
         logAbandoned="true" removeAbandoned="true" 
         removeAbandonedTimeout="60" type="javax.sql.DataSource" />
-          
+        
+ <!--   
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+        driverClassName="com.mysql.jdbc.Driver" 
+        url="jdbc:mysql://localhost:3306/murach_test?autoReconnect=true" 
+        connectionName="root" connectionPassword="password"
+        userTable="userPass" userNameCol="Username" userCredCol="password"
+        userRoleTable="UserRole" rolNameCol="RoleName" />
+    
+    <Resource name="jdbc/murach" auth="Container" 
+        driverClassName="com.mysql.jdbc.Driver" 
+        url="jdbc:mysql://localhost:3306/murach_test?autoReconnect=true" 
+        username="root" password="password" 
+        userTable="userPass" userNameCol="Username" userCredCol="password"
+        userRoleTable="UserRole" rolNameCol="RoleName"
+        maxActive="100" maxIdle="30" maxWait="10000" 
+        logAbandoned="true" removeAbandoned="true" 
+        removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+       
+    <Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99"
+    	dataSourceName="jdbc/murach" localDataSource="true"
+    	userTable="userPass" userNameCol="Username" userCredCol="password"
+        userRoleTable="UserRole" rolNameCol="RoleName" />
+         -->
 </Context>
