@@ -4,6 +4,26 @@
   <artifactId>JavaServlets-and-JSP</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <build>
+	<plugins>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+			<release>21</release>
+			</configuration>
+		</plugin>
+		<plugin>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.2.3</version>
+		</plugin>
+	</plugins>
+  </build>
+  <properties>
+	<maven.compiler.source>11</maven.compiler.source>
+	<maven.compiler.target>11</maven.compiler.target>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
 	<dependency>
 	    <groupId>javax.servlet</groupId>
@@ -26,6 +46,46 @@
 	    <artifactId>jstl-impl</artifactId>
 	    <version>1.2</version>
 	    <scope>runtime</scope>
+	</dependency>
+	<dependency>
+	    <groupId>com.mysql</groupId>
+	    <artifactId>mysql-connector-j</artifactId>
+	    <version>9.7.0</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-dbcp</artifactId>
+	    <version>10.1.52</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>7.3.3.Final</version>
+	</dependency>
+    <dependency>
+	    <groupId>jakarta.persistence</groupId>
+	    <artifactId>jakarta.persistence-api</artifactId>
+	    <version>3.2.0</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>jakarta.mail</groupId>
+	    <artifactId>jakarta.mail-api</artifactId>
+	    <version>2.1.3</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>jakarta.activation</groupId>
+	    <artifactId>jakarta.activation-api</artifactId>
+	    <version>2.1.4</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.angus</groupId>
+	    <artifactId>jakarta.mail</artifactId>
+	    <version>2.0.3</version> <!-- Gunakan versi terbaru -->
 	</dependency>
   </dependencies>
 </project>

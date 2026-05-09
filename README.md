@@ -132,7 +132,7 @@ This is the classic **MVC pattern** in action:
 
 ---
 
-Excellent choice, Firman — moving from “Hello World” to a **real-world Servlet + JSP example** will help you see how data flows in a practical app. Let’s build a **mini login form** example that demonstrates user input, servlet processing, and JSP output.
+moving from “Hello World” to a **real-world Servlet + JSP example** will help you see how data flows in a practical app. Let’s build a **mini login form** example that demonstrates user input, servlet processing, and JSP output.
 
 ---
 
@@ -323,7 +323,7 @@ Next, you could:
 - Add **session management** to keep users logged in.
 - Use **connection pooling** for performance.
 
-Great, Firman — let’s make your login system **production-ready** by adding two critical features: **password hashing** and **session management**.  
+let’s make your login system **production-ready** by adding two critical features: **password hashing** and **session management**.  
 
 ---
 
@@ -415,7 +415,7 @@ This ensures only logged-in users can access protected pages.
 
 ---
 
-Perfect, Firman — let’s extend your login system with **logout functionality** and **role-based access control** so you can manage multiple user types like *admin* and *regular users*.  
+let’s extend your login system with **logout functionality** and **role-based access control** so you can manage multiple user types like *admin* and *regular users*.  
 
 ---
 
