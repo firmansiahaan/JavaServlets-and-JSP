@@ -47,8 +47,8 @@
 		
 	<p>&nbsp;</p>
 	
+	<h2>Implicit pageContext:</h2>
 	<p>
-		<h2>Implicit pageContext:</h2>
 		HTTP Request Method: ${pageContext.request.method}<br>
 		HTTP Response Type: ${pageContext.response.contentType}<br>
 		HTTP Session ID: ${pageContext.session.id}<br>

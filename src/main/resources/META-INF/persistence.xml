@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+     xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="userAdminPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>murach.business.jpa.Invoice</class>
+        <class>murach.business.jpa.LineItem</class>
+        <class>murach.business.jpa.Product</class>
+        <class>murach.business.jpa.User</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/murach_jpa?currentSchema=murach_jpa"/>
+	        <property name="jakarta.persistence.jdbc.user" value="root"/>
+		    <property name="jakarta.persistence.jdbc.password" value="password"/>
+		    <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+            <property name="hibernate.connection.pool_size" value="10"/>
+            <property name="jta.platform" value="org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform"/>
+            
+        </properties>
+    </persistence-unit>
+</persistence>
