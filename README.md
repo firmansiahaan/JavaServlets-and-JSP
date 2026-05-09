@@ -1,4 +1,4 @@
-# JavaServlets-and-JSP
+# Murach JavaServlets and JSP
 
 Java Servlets and JSP (JavaServer Pages) are two core technologies in the Java EE (Jakarta EE) ecosystem for building dynamic web applications. Let me break them down step by step so you can see how they fit together:
 

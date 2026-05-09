@@ -12,7 +12,7 @@
 	<div><img src="images/murachlogo.jpg" alt="Murach Logo" width="100" height="100"></div>
 	<h1>Thanks for joining our email list</h1>
 	
-	<p>Here is the information that you entered:<p>
+	<p>Here is the information that you entered:</p>
 	
 	<label>Email:</label>
 	<span>${user.email}</span><br>
@@ -23,7 +23,7 @@
 	
 	<p>To enter another email address, click on the Back
 	button in your browser or the Return button shown
-	below.<p>
+	below.</p>
 	
 	<form action="" method="get">
 		<input type="hidden" name="action" value="join">
