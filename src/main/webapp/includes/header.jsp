@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>Fresh Corn Records</title>
     <link rel="shortcut icon" href="<c:url value='/images/favicon.ico'/>">
-    <link rel="stylesheet" href="<c:url value='styles/master.css'/> ">
+    <link rel="stylesheet" href="<c:url value='/styles/master.css'/> ">
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 </head>
 
