@@ -64,7 +64,7 @@ public class Product implements Serializable {
     }
 
     public String getImageURL() {
-        String imageURL = "/musicStore/images/" + code + "_cover.jpg";
+        String imageURL = "/JavaServlets-and-JSP/images/" + code + "_cover.jpg";
         return imageURL;
     }
 
