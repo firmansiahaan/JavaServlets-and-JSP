@@ -2,7 +2,7 @@
 <aside id="sidebarA">
     <nav>
       <ul>
-          <li><a class="current" href="<c:url value='/' />">
+          <li><a class="current" href="<c:url value='/musicstore.jsp' />">
                   Home</a></li>
           <li><a href="<c:url value='/catalog' />">
                   Browse Catalog</a></li>
