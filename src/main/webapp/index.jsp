@@ -8,8 +8,8 @@
 <body>
 	<h1>Welcome to Murach's Java Servlet and JSP</h1>
 	<p>Click link below:</p>
-	<a href="ch02.html">Chapter 1 - An Intoduction to Web Programming with Java</a><br>
-	<a href="ch04.html">Chapter 4 - A Crash Course in HTML and CSS3</a><br>
+	<a href="ch02.jsp">Chapter 1 - An Intoduction to Web Programming with Java</a><br>
+	<a href="ch04.jsp">Chapter 4 - A Crash Course in HTML and CSS3</a><br>
 	<a href="emailList">Chapter 5 - How to Develop Servlet</a><br>
 	<a href="ch06.jsp">Chapter 6 - How to develop JavaServer Pages</a><br>
 	<a href="ch07.jsp">Chapter 7 - How to Work with Sessions and Cookies</a><br>
@@ -30,6 +30,5 @@
 	<span><a href="ch20.jsp">Download Application</a></span><br>
 	<a href="ch21.xhtml">Chapter 21 - How to Work with JavaServer Faces</a><br>
 	<a href="musicstore.jsp">Chapter 22 - An Introduction	to the Music Store Website</a><br>
-	<a href="">Chapter 23 - The Applications on the Website</a><br>
 </body>
 </html>

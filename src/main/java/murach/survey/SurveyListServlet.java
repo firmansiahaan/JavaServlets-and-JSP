@@ -15,7 +15,7 @@ public class SurveyListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 		
-		String url = "/ch04.html";
+		String url = "/ch04.jsp";
 		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");

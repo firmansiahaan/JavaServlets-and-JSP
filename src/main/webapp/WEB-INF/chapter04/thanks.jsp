@@ -18,7 +18,7 @@
 	button in your browser or the Return button shown
 	below.</p>
 	
-	<form action="index_ch04.html" method="get">
+	<form action="ch04.html" method="get">
 		<input type="hidden" name="action" value="join">
 		<input type="submit" value="Return">
 	</form>

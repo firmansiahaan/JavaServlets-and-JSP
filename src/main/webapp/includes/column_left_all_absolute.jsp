@@ -1,7 +1,7 @@
 <aside id="sidebarA">
     <nav>
       <ul>
-        <li><a href="${absolutePath}">
+        <li><a href="${absolutePath}/musicstore.jsp">
                 Home</a></li>
         <li><a href="${absolutePath}/catalog">
                 Browse Catalog</a></li>

@@ -15,7 +15,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/murach");
+            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/murach_test");
         } catch (NamingException e) {
             System.out.println(e);
         }

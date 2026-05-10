@@ -9,13 +9,21 @@
     <h1>Log In</h1>
     <p><i>${message}</i></p>
     <form action="check" method="post">
-        <input type="hidden" name="action" value="add">        
-        <label class="pad_top">Username:</label>
-        <input type="text" name="username"><br>
-        <label class="pad_top">Password:</label>
-        <input type="password" name="password"><br>
-        <label>&nbsp;</label>
-        <input type="submit" value="Log In" class="margin_left">
+    	<input type="hidden" name="action" value="add">
+    	<table>
+	    	<tr>
+	    		<td><label class="pad_top">Username:</label>
+		        <td><input type="text" name="username"><br>        
+		    </tr>
+		    <tr>
+		    	<td><label class="pad_top">Password:</label>
+		        <td><input type="password" name="password"><br>
+		    </tr>
+		    <tr>    
+		        <td><label>&nbsp;</label>
+		        <td><input type="submit" value="Log In" class="margin_left">
+		    </tr>
+        </table>
     </form>
     <h2>Password info</h2>
     <p>Hash:<br>${hashedPassword}</p>

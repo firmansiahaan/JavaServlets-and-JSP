@@ -20,6 +20,7 @@
         <h1>Fresh Corn Records</h1>
         <h2>Quality Sounds Served Up Fresh!</h2>
     </header>
+    
     <nav id="nav_bar">
         <ul>
             <li><a href="<c:url value='/admin'/>">

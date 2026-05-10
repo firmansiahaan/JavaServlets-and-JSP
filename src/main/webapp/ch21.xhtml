@@ -2,38 +2,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" >
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Murach's Java Servlets and JSP</title>
-		<link rel="stylesheet" href="styles/main.css" type="text/css"/>
+		<link rel="stylesheet" href="/styles/master.css" type="text/css"/>
 	</h:head>
+	
 	<h:body>
+		
+		<h1>*** XHTML IS UNDER CONSTRUCTION ***</h1>
+		
 		<h1>Join our email list</h1>
 		<p>To join our email list, enter your name and email address below.</p>
 		
 		<c:if test="${ message != null }">
-			<p class="error">#{emailList.message}</p>
-		</c:if>	
+			<h:outputText class="error" value="#{emailList.message}" />
+		</c:if>
+		
 		<h:form>
-			<label class="pad_top">Email:</label>
-			<h:inputText id="email" required="true" value="#{emailList.user.email}"
-				requiredMessage="An email address is required" />
-			<h:message for="email" showSummary="true" showDetail="false" class="error" /><br/>
-			
-			<label class="pad_top">First Name:</label>
-			<h:inputText id="firstName" required="true" value="#{emailList.user.firstName}"
-				requiredMessage="An first name is required" />
-			<h:message for="firstName" showSummary="true" showDetail="false" class="error" /><br/>
-			
-			<label class="pad_top">Last Name:</label>
-			<h:inputText id="lastName" required="true" value="#{emailList.user.lastName}"
-				requiredMessage="A last name is required" />
-			<h:message for="lastName" showSummary="true" showDetail="false" class="error" /><br/>
-			
-			<label>&nbsp;</label>
-			<h:commandButton id="submit" action="#{emailList.addToEmailList}" value="Join Now"
-				class="margin_left" />
+			<table>
+				<tr>
+					<td><h:outputText class="pad_top" value="Email:"/></td>
+					<td><h:inputText id="email" required="true" value="#{emailList.user.email}"
+						requiredMessage="An email address is required" /></td>
+					<td><h:message for="email" showSummary="true" showDetail="false" class="error" /></td>
+				</tr>
+				
+				<tr>
+					<td><h:outputText class="pad_top" value="First Name:"/></td>
+					<td><h:inputText id="firstName" required="true" value="#{emailList.user.firstName}"
+						requiredMessage="An first name is required" /></td>
+					<td><h:message for="firstName" showSummary="true" showDetail="false" class="error" /></td>
+				</tr>
+				
+				<tr>
+					<td><h:outputText class="pad_top" value="Last Name:"/></td>
+					<td><h:inputText id="lastName" required="true" value="#{emailList.user.lastName}"
+						requiredMessage="A last name is required" /></td>
+					<td><h:message for="lastName" showSummary="true" showDetail="false" class="error" /></td>
+				</tr>
+				
+				<tr>
+					<td><h:outputText class="pad_top" value=""/></td>
+					<td><h:commandButton id="submit" action="#{emailList.addToEmailList}" value="Join Now"
+						class="margin_left" /></td>
+					<td><h:outputText class="pad_top" value=""/></td>
+				</tr>	
+			</table>
 		</h:form>
 	</h:body>
 </html>
